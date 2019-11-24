@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .star-container > * {
+        color: gold;
+    }
+
+</style>
+
+<div class="row">
+    <div class="col s8">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="input-field">
+                <label for="title">제목 :</label>
+                <input type="text" name="title">
+            </div>
+            <div class="input-field">
+                <textarea name="content" id="" cols="30" rows="10"></textarea>
+                <label for="content">내용 :</label>
+            </div>
+            <!--    <a href="" class="waves-effect waves-light btn">작성</a>-->
+            <div class="star-container">
+                <i class="material-icons left star">star</i>
+                <i class="material-icons left star">star</i>
+                <i class="material-icons left star">star</i>
+                <i class="material-icons left star">star</i>
+                <i class="material-icons left star">star</i>
+            </div>
+            <button type="submit" class="waves-effect waves-light btn">작성<i
+                    class="material-icons right">star</i></button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

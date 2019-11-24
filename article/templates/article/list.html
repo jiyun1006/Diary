@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="collection">
+{% for article in articles %}
+<a href="{% url 'detail' article.pk %}" class="collection-item"><h4> {{article.title}} {{forloop.counter}}</h4></a>
+{% endfor %}
+</div>
+
+<!--views의 함수 detail에 pk가 필요하므로 적어줘야 한다. -->
+<a href="{% url 'create' %}">
+    <button>글 작성하기</button>
+</a>
+
+{% endblock %}
